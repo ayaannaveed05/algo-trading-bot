@@ -1,26 +1,19 @@
+"""Abstract base class for all trading strategies"""
+
 from abc import ABC, abstractmethod
 import pandas as pd
 
+
 class BaseStrategy(ABC):
-    """Abstract base class for trading strategies"""
+    """Interface that all trading strategies must implement"""
     
     def __init__(self, name):
+        """Initialize strategy with a name"""
         self.name = name
     
     @abstractmethod
     def generate_signals(self, df):
-        """
-        Generate trading signals from data
-        
-        Args:
-            df: DataFrame with OHLCV data and any indicators
-        
-        Returns:
-            DataFrame with additional 'signal' column:
-                1 = BUY
-                -1 = SELL
-                0 = HOLD
-        """
+        """Generate trading signals (1=BUY, -1=SELL, 0=HOLD) from market data"""
         pass
     
     def __repr__(self):
