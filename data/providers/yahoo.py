@@ -20,7 +20,7 @@ class YahooProvider(DataProvider):
         # Download historical data for the date range
         df = ticker.history(start=start, end=end, interval=interval)
         
-        # Standardize column names to lowercase
+        # Column names to lowercase
         df.columns = [col.lower() for col in df.columns]
         
         # Keep only OHLCV columns

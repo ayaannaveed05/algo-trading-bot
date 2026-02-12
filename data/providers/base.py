@@ -1,6 +1,6 @@
 """Abstract base class for all data providers"""
 
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod # for creating the abstract class
 import pandas as pd
 from datetime import datetime
 
